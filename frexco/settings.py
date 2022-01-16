@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'drf_spectacular',
     'api',
 ]
 
@@ -129,5 +130,12 @@ REST_FRAMEWORK = {
     # https://www.django-rest-framework.org/tutorial/quickstart/#pagination
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 20,
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Frexco API',
+    'DESCRIPTION': 'API para consulta de frutas e regiões.',
+    'VERSION': '1.0.0',
+    'COMPONENT_SPLIT_PATCH': False,
+}
