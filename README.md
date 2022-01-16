@@ -42,3 +42,6 @@ Para acessar a documentação da API acesse http://localhost:8000/api/docs/
       tabela.
 - Para cada tabela, a API deve conter os quatro métodos GET, POST, PUT e 
   DELETE.
+
+### Diagrama ER
+<img src="desafio-er.jpeg" alt="Diagrama ER">
