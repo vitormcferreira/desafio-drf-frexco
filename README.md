@@ -3,6 +3,9 @@
 ## Iniciar a API
 Projeto criado usando Django e Django Rest Framework.
 
+A documentação da API está disponível em [docs](https://vitormcferreira.github.io/desafio-drf-frexco/).
+
+## Iniciando o projeto
 ```
 # Clona o repositório para a pasta atual
 git clone https://github.com/vitormcferreira/desafio-drf-frexco.git
@@ -23,7 +26,7 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-Para acessar a documentação da API acesse http://localhost:8000/api/docs/
+No localhost a documentação está disponível em http://localhost:8000/api/docs/ .
 
 
 
