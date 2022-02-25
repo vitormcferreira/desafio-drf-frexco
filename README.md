@@ -1,7 +1,6 @@
 # desafio-drf-frexco
 
-## Iniciar a API
-Projeto criado usando Django e Django Rest Framework.
+Projeto criado usando Django e Django Rest Framework para um processo seletivo da Frexco.
 
 A documentação da API está disponível em [docs](https://vitormcferreira.github.io/desafio-drf-frexco/).
 
