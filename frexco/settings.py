@@ -146,4 +146,7 @@ SPECTACULAR_SETTINGS = {
     # Remove o componente de PATCH (não é necessário pois o componente de
     # POST/PUT já fornece as informações necessárias)
     'COMPONENT_SPLIT_PATCH': False,
+
+    # Remove a rota de schema
+    'SERVE_INCLUDE_SCHEMA': False,
 }
