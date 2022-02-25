@@ -126,6 +126,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+# https://www.django-rest-framework.org/api-guide/settings/#settings
 REST_FRAMEWORK = {
     # https://www.django-rest-framework.org/tutorial/quickstart/#pagination
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
@@ -133,6 +134,7 @@ REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
+# https://drf-spectacular.readthedocs.io/en/latest/settings.html
 SPECTACULAR_SETTINGS = {
     'TITLE': 'Frexco API',
     'DESCRIPTION': 'API para consulta de frutas e regiões.',
