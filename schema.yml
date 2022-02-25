@@ -1,0 +1,388 @@
+openapi: 3.0.3
+info:
+  title: Frexco API
+  version: 1.0.0
+  description: API para consulta de frutas e regiões.
+paths:
+  /api/fruit/:
+    get:
+      operationId: fruit_list
+      summary: Obtém todas as frutas.
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      tags:
+      - fruit
+      security:
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedFruitList'
+          description: ''
+    post:
+      operationId: fruit_create
+      summary: Insere uma nova fruta.
+      tags:
+      - fruit
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Fruit'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Fruit'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Fruit'
+        required: true
+      security:
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Fruit'
+          description: ''
+  /api/fruit/{id}/:
+    get:
+      operationId: fruit_retrieve
+      summary: Obtém uma fruta.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this fruit.
+        required: true
+      tags:
+      - fruit
+      security:
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Fruit'
+          description: ''
+    put:
+      operationId: fruit_update
+      summary: Atualiza uma fruta.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this fruit.
+        required: true
+      tags:
+      - fruit
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Fruit'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Fruit'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Fruit'
+        required: true
+      security:
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Fruit'
+          description: ''
+    patch:
+      operationId: fruit_partial_update
+      summary: Atualiza parcialmente uma fruta.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this fruit.
+        required: true
+      tags:
+      - fruit
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Fruit'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Fruit'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Fruit'
+        required: true
+      security:
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Fruit'
+          description: ''
+    delete:
+      operationId: fruit_destroy
+      summary: Remove uma fruta.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this fruit.
+        required: true
+      tags:
+      - fruit
+      security:
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/region/:
+    get:
+      operationId: region_list
+      summary: Obtém todas as regiões
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      tags:
+      - region
+      security:
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedRegionList'
+          description: ''
+    post:
+      operationId: region_create
+      summary: Insere uma nova região.
+      tags:
+      - region
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Region'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Region'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Region'
+        required: true
+      security:
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Region'
+          description: ''
+  /api/region/{id}/:
+    get:
+      operationId: region_retrieve
+      summary: Obtém uma região.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this region.
+        required: true
+      tags:
+      - region
+      security:
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Region'
+          description: ''
+    put:
+      operationId: region_update
+      summary: Atualiza uma região.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this region.
+        required: true
+      tags:
+      - region
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Region'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Region'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Region'
+        required: true
+      security:
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Region'
+          description: ''
+    patch:
+      operationId: region_partial_update
+      summary: Atualiza parcialmente uma região.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this region.
+        required: true
+      tags:
+      - region
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Region'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Region'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Region'
+        required: true
+      security:
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Region'
+          description: ''
+    delete:
+      operationId: region_destroy
+      summary: Remove uma região.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this region.
+        required: true
+      tags:
+      - region
+      security:
+      - {}
+      responses:
+        '204':
+          description: No response body
+components:
+  schemas:
+    Fruit:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 255
+        region_id:
+          type: integer
+          nullable: true
+      required:
+      - id
+      - name
+    NameEnum:
+      enum:
+      - Norte
+      - Nordeste
+      - Centro-Oeste
+      - Sudeste
+      - Sul
+      type: string
+    PaginatedFruitList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Fruit'
+    PaginatedRegionList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Region'
+    Region:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          $ref: '#/components/schemas/NameEnum'
+      required:
+      - id
+      - name
