@@ -142,5 +142,8 @@ SPECTACULAR_SETTINGS = {
     'TITLE': 'Frexco API',
     'DESCRIPTION': 'API para consulta de frutas e regiões.',
     'VERSION': '1.0.0',
+
+    # Remove o componente de PATCH (não é necessário pois o componente de
+    # POST/PUT já fornece as informações necessárias)
     'COMPONENT_SPLIT_PATCH': False,
 }
